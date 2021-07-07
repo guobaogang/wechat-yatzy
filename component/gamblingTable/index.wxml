@@ -1,0 +1,5 @@
+<!--component/gamblingTable/index.wxml-->
+<view>
+  <text>gambling table</text>
+  <dice></dice>
+</view>

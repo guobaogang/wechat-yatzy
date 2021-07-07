@@ -1,0 +1,6 @@
+<!--pages/home/index.wxml-->
+<view>
+  <text>home</text>
+  <score-board></score-board>
+  <gambling-table></gambling-table>
+</view>
