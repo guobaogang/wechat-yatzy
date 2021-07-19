@@ -1,6 +1,6 @@
 {
   "component": true,
   "usingComponents": {
-    "dice": "../dice/index"
+    "score-column": "../scoreColumn/scoreColumn"
   }
 }

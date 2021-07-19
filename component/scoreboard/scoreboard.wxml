@@ -1,0 +1,12 @@
+<!--component/scoreboard/index.wxml-->
+<view class="score-board">
+  <view class="score-table">
+    <score-column isTitle="true"></score-column>
+    <block wx:for="{{game.players}}" wx:for-item="player" wx:key="id">
+      <score-column player="{{player}}"></score-column>
+    </block>
+    <view class="reword-desc">
+      1~6总计超过63分可获得奖励分
+    </view>
+  </view>
+</view>

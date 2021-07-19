@@ -1,0 +1,5 @@
+var isInclude = function (array, item) {
+  return array.indexOf(item) > -1
+};
+
+module.exports.isInclude = isInclude;

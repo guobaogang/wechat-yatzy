@@ -1,0 +1,78 @@
+/* component/scoreItem/index.wxss */
+.score-col-item {
+  border: 1px solid black;
+  height: 30px;
+  line-height: 30px;
+}
+
+.score-col-item.score-col-name {
+  height: 90px;
+}
+
+.score-col-reward {
+  margin-bottom: 30px;
+}
+
+.score-col-all {
+  margin-bottom: 5px;
+}
+
+.score-col-total {
+  height: 50px;
+  line-height: 50px;
+  margin-top: 5px;
+  font-size: 20px;
+}
+
+.game-start .score-column.is-turn .score-col-item {
+  background-color: #bebe46;
+}
+
+.score-column.score-column-title .score-col-name {
+  border: none;
+  height: 92px;
+  padding: 0 !important;
+  width: 131px !important;
+}
+
+.score-column.score-column-title .score-col-name .round {
+  text-align: center;
+  font-size: 20px;
+  color: #6e6e6e;
+}
+
+.score-column.score-column-title .score-col-name .order-title {
+  background-color: #2e2e2e;
+  color: #ffffff;
+}
+
+.score-column.score-column-title .score-col-item {
+  width: 120px;
+  padding-left: 10px;
+}
+
+.score-column.score-column-title .score-col-subtotal,
+.score-column.score-column-title .score-col-reward,
+.score-column.score-column-title .score-col-total {
+  background-color: #2e2e2e;
+  color: #ffffff;
+}
+
+.score-column.score-column-score .score-col-item {
+  width: 80px;
+  text-align: center;
+}
+
+.score-column.score-column-score .score-col-name {
+  word-break: break-all;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.score-column.score-column-score .score-col-subtotal,
+.score-column.score-column-score .score-col-reward {
+  background-color: #6e6e6e;
+  color: #ffffff;
+}

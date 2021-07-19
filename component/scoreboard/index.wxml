@@ -1,5 +1,0 @@
-<!--component/scoreboard/index.wxml-->
-<view>
-<text>scoreboard</text>
-<score-column></score-column>
-</view>

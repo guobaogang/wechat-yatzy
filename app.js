@@ -1,5 +1,7 @@
 //app.js
-App({
+import store from './store/index';
+
+App(store.createApp({
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
@@ -34,6 +36,42 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    dice: {
+      dices: [{
+        key: 1,
+        point: 1,
+        selected: false
+      },
+      {
+        key: 2,
+        point: 2,
+        selected: false
+      },
+      {
+        key: 3,
+        point: 3,
+        selected: true
+      },
+      {
+        key: 4,
+        point: 4,
+        selected: true
+      },
+      {
+        key: 5,
+        point: 5,
+        selected: false
+      }],
+      rollTimes: 0,
+      isRolling: false
+    },
+    game: {
+      players: [],
+      rounds: 0, //轮次
+      isMyTurn: true,    //who is turn
+      start: false,
+      position: 1
+    }
   }
-})
+}))

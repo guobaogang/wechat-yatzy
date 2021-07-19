@@ -1,0 +1,9 @@
+<!--component/gamblingTable/index.wxml-->
+<view class="gambling-table">
+  <view class="dice-cup">
+    <block wx:for="{{dice.dices}}" wx:for-item="item" wx:key="key">
+      <dice bindtap="selectDice" data-dice="{{item}}" point="{{item.point}}" selected="{{item.selected}}"></dice>
+    </block>
+  </view>
+  <button disabled="{{dice.isRolling}}" class="roll-btn" type="primary" bindtap="myRoll">Roll</button>
+</view>

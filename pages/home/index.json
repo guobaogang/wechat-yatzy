@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "score-board": "../../component/scoreboard/index",
-    "gambling-table": "../../component/gamblingTable/index"
-  }
-}
