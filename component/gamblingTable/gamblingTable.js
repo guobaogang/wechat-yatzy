@@ -1,5 +1,6 @@
 // component/gamblingTable/index.js
 import store from '../../store/index';
+import calcScore from '../../utils/calc';
 
 Component(store.createComponent({
   /**
@@ -8,7 +9,7 @@ Component(store.createComponent({
   properties: {
 
   },
-  globalData: ['dice'],
+  globalData: ['dice', 'game'],
   /**
    * 组件的初始数据
    */
@@ -37,6 +38,13 @@ Component(store.createComponent({
         isRolling: true
       }
       store.dispatch('dice', this.data.dice);
+      wx.sendSocketMessage({
+        data: JSON.stringify({
+          type: 'startRoll',
+          data: {}
+        })
+      })
+
       let timer = setTimeout(() => {
         for (let index = 0; index < dices.length; index++) {
           if (!dices[index].selected) {
@@ -50,6 +58,13 @@ Component(store.createComponent({
           rollTimes: rollTimes + 1
         }
         store.dispatch('dice', this.data.dice);
+        wx.sendSocketMessage({
+          data: JSON.stringify({
+            type: 'endRoll',
+            data: this.data.dice
+          })
+        })
+        this.calcMyScore();
         clearTimeout(timer);
       }, 1000)
     },
@@ -64,6 +79,22 @@ Component(store.createComponent({
         dices
       }
       store.dispatch('dice', this.data.dice);
+      wx.sendSocketMessage({
+        data: JSON.stringify({
+          type: 'selectDice',
+          data: { key, selected }
+        })
+      })
+    },
+    calcMyScore: function(){
+      const {
+        dices,
+        rollTimes
+      } = this.data.dice;
+      let me = this.data.game.players.find(play=>play.isMe);
+      let tempScore = calcScore(dices, me.score);
+      me.score = tempScore;
+      store.dispatch('game', this.data.game);
     }
   }
 }))

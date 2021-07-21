@@ -5,5 +5,6 @@
       <dice bindtap="selectDice" data-dice="{{item}}" point="{{item.point}}" selected="{{item.selected}}"></dice>
     </block>
   </view>
-  <button disabled="{{dice.isRolling}}" class="roll-btn" type="primary" bindtap="myRoll">Roll</button>
+  <button wx:if="{{game.isMyTurn}}"
+         disabled="{{dice.isRolling}}" class="roll-btn" type="primary" bindtap="myRoll">Roll</button>
 </view>

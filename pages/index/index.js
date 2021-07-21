@@ -74,10 +74,10 @@ Page(store.createPage({
     store.dispatch('dice', dice);
     let game = {
       players: [],
-      rounds: 0, //轮次
-      isMyTurn: true,    //who is turn
+      rounds: 1, //轮次
+      isMyTurn: clients.length === 0,
       start: false,
-      position: 1
+      position: 0
     }
     clients.forEach(client=>{
       game.players.push({
@@ -101,6 +101,7 @@ Page(store.createPage({
       })
     });
     game.players.push({
+      isMe: true,
       id: myInfo.id,
       name: myInfo.name,
       avatar: myInfo.avatar,

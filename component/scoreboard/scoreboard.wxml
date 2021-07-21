@@ -2,8 +2,9 @@
 <view class="score-board">
   <view class="score-table">
     <score-column isTitle="true"></score-column>
-    <block wx:for="{{game.players}}" wx:for-item="player" wx:key="id">
-      <score-column player="{{player}}"></score-column>
+    <block wx:for="{{game.players}}" wx:for-item="player" wx:for-index="index" wx:key="id">
+      <score-column player="{{player}}" disabled="{{!(player.isMe && game.isMyTurn)}}" 
+      isCurrent="{{game.position == index}}"></score-column>
     </block>
     <view class="reword-desc">
       1~6总计超过63分可获得奖励分
