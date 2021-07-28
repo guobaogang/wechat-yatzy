@@ -6,8 +6,8 @@
       <score-column player="{{player}}" disabled="{{!(player.isMe && game.isMyTurn)}}" 
       isCurrent="{{game.position == index}}"></score-column>
     </block>
-    <view class="reword-desc">
+    <!-- <view class="reword-desc">
       1~6总计超过63分可获得奖励分
-    </view>
+    </view> -->
   </view>
 </view>

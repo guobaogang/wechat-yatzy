@@ -63,8 +63,7 @@ Component(store.createComponent({
       position ++;
       this.data.game.position = position === this.data.game.players.length ? 0 : position;
       this.data.game.isMyTurn = this.data.game.players[position].isMe;;
-
-      console.log('position == '+position);
+      this.data.game.times = 3;
       store.dispatch('game', this.data.game);
       let dice = {
         dices: [{

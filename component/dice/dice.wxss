@@ -4,10 +4,10 @@
 }
 
 .dice {
-    background-size: 300px 50px;
-    width: 50px;
-    height: 50px;
-    margin: 3px;
+    background-size: 600rpx 100rpx;
+    width: 100rpx;
+    height: 100rpx;
+    margin: 6rpx;
     background-position: 0% 100%;
     animation: .2s steps(6, jump-none) random infinite;
 }
@@ -19,11 +19,11 @@
 }
 
 .dice-selected{
-    border: 2px solid red;
+    border: 4rpx solid red;
 }
 
 .dice-unselected{
-    border: 2px solid transparent;
+    border: 4rpx solid transparent;
 }
 
 .dice-2 {

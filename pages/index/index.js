@@ -77,7 +77,8 @@ Page(store.createPage({
       rounds: 1, //轮次
       isMyTurn: clients.length === 0,
       start: false,
-      position: 0
+      position: 0,
+      times: 3
     }
     clients.forEach(client=>{
       game.players.push({

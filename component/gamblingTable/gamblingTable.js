@@ -57,11 +57,17 @@ Component(store.createComponent({
           isRolling: false,
           rollTimes: rollTimes + 1
         }
+        this.data.game.times = this.data.game.times - 1;
+        console.log(this.data.game.times );
         store.dispatch('dice', this.data.dice);
+        store.dispatch('game', this.data.game);
         wx.sendSocketMessage({
           data: JSON.stringify({
             type: 'endRoll',
-            data: this.data.dice
+            data: {
+              dice: this.data.dice,
+              times: this.data.game.times
+            }
           })
         })
         this.calcMyScore();
@@ -69,6 +75,7 @@ Component(store.createComponent({
       }, 1000)
     },
     selectDice: function (event) {
+      if(this.data.game.times === 3) return;
       const { key, selected } = event.currentTarget.dataset.dice;
       const {
         dices

@@ -1,27 +1,31 @@
 /* component/scoreItem/index.wxss */
+
+.score-column {
+  height: 100%;
+}
+
 .score-col-item {
-  border: 1px solid black;
-  height: 30px;
-  line-height: 30px;
+  border: 1rpx solid black;
+  height: 5%;
+  font-size: 30rpx;
 }
 
 .score-col-item.score-col-name {
-  height: 90px;
+  height: 15%;
 }
 
 .score-col-reward {
-  margin-bottom: 30px;
+  margin-bottom: 10rpx;
 }
 
 .score-col-all {
-  margin-bottom: 5px;
+  margin-bottom: 5rpx;
 }
 
 .score-col-total {
-  height: 50px;
-  line-height: 50px;
-  margin-top: 5px;
-  font-size: 20px;
+  height: 7%;
+  margin-top: 10rpx;
+  font-size: 30rpx;
 }
 
 .score-column.is-turn .score-col-item {
@@ -30,15 +34,16 @@
 
 .score-column.score-column-title .score-col-name {
   border: none;
-  height: 92px;
+  height: calc(15% + 4rpx);
   padding: 0 !important;
-  width: 131px !important;
+  width: 170rpx !important;
 }
 
 .score-column.score-column-title .score-col-name .round {
   text-align: center;
-  font-size: 20px;
+  font-size: 30rpx;
   color: #6e6e6e;
+  height: 33%;
 }
 
 .score-column.score-column-title .score-col-name .order-title {
@@ -47,8 +52,8 @@
 }
 
 .score-column.score-column-title .score-col-item {
-  width: 120px;
-  padding-left: 10px;
+  width: 150rpx;
+  padding-left: 20rpx;
 }
 
 .score-column.score-column-title .score-col-subtotal,
@@ -59,7 +64,7 @@
 }
 
 .score-column.score-column-score .score-col-item {
-  width: 80px;
+  width: 131rpx;
   text-align: center;
 }
 

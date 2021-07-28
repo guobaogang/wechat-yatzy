@@ -141,13 +141,15 @@ Page(store.createPage({
   userEndRoll: function (data) {
     const {
       user,
-      dice
+      dice,
+      times
     } = data;
     this.data.dice = dice;
     store.dispatch('dice', this.data.dice);
     let player = this.data.game.players.find(play => play.id === user.id);
     let tempScore = calcScore(dice.dices, player.score);
     player.score = tempScore;
+    this.data.game.times = times;
     store.dispatch('game', this.data.game);
   },
   userSelectDice: function (data) {
@@ -159,12 +161,13 @@ Page(store.createPage({
     store.dispatch('dice', this.data.dice);
   },
   userConfirmScore: function (data) {
-    const {player, position} = data;
+    const { player, position } = data;
     let index = this.data.game.players.findIndex(play => play.id === player.id);
     this.data.game.position = position;
+    this.data.game.times = 3;
     this.data.game.isMyTurn = this.data.game.players[position].isMe;
-    if(index>-1){
-      this.data.game.players.splice(index,1,player)
+    if (index > -1) {
+      this.data.game.players.splice(index, 1, player)
       store.dispatch('game', this.data.game);
     }
     let dice = {
@@ -196,6 +199,6 @@ Page(store.createPage({
       rollTimes: 0,
       isRolling: false
     };
-    store.dispatch('dice',dice)
+    store.dispatch('dice', dice)
   }
 }))
